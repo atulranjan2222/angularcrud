@@ -1,0 +1,48 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Customer List</h2>
+    </div>
+    <div class="panel-body">
+    <a routerLink="/customerreg" class="nav-link">Click Here To Register Customer</a>
+    <table class="table table-striped w-auto">
+        <thead  class="black white-text">
+            <tr>
+                <th>Customer Code</th>
+                <th>First Name</th>
+                <th>MiddleName</th>
+                <th>Last Name</th>                            
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Address Line1</th>
+                <th>Address Line2</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Zip Code</th>
+            </tr>
+        </thead>
+        <tbody >
+           
+            <tr *ngFor="let c of customers" > 
+                <td>{{c.customerCode}}</td>
+                <td>{{c.firstName}}</td>
+                <td>{{c.middleName}}</td>
+                <td>{{c.lastName}}</td>
+                <td>{{c.gender}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.mobile}}</td>
+                <td>{{c.address.addressLine1}}</td>
+                <td>{{c.address.addressLine2}}</td>
+                <td>{{c.address.city}}</td>
+                <td>{{c.address.state}}</td>
+                <td>{{c.address.country}}</td>
+                <td>{{c.address.zipCode}}</td>
+                <td>  
+               </td>
+            
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
