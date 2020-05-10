@@ -11,12 +11,14 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CustomerserviceService {
- baseUrl:string='http://localhost:8088/demo/createcustomers';
+ baseUrl:string='http://localhost:8088';
   constructor(private http: HttpClient) { }
  
    createCustomer(customer:Customers) {
+     
     console.log(JSON.stringify(customer))
-    return this.http.post<Customers>(this.baseUrl, customer);
-  }
-  
+    return this.http.post<Customers>(this.baseUrl+ '/demo/createcustomers/', customer,{headers:{'Content-Type': 'application/json'}}).subscribe(result => {
+      //console.log( result );
+  });
+}
 }
