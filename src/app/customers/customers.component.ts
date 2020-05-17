@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customers } from '../models/customers';
+import {MatTableDataSource} from '@angular/material/table';
+
 
 @Component({
   selector: 'app-customers',
@@ -7,11 +9,18 @@ import { Customers } from '../models/customers';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-customers:Customers[]=[];
+//customers:Customers[]=[];
   constructor() { }
 
+  displayedColumns:string[] = ['customerCode', 'firstName', 'middleName', 'lastName','gender','email','mobile','address.addressLine1','address.addressLine2','address.city','address.state','address.country','address.zipCode'];
+  dataSource = new MatTableDataSource<Customers>(ELEMENT_DATA);
+
   ngOnInit(): void {
-this.customers=[{
+
+  }
+
+}
+const ELEMENT_DATA: Customers[] =[{
 	"customerCode":"kumar_123",
 	"firstName":"kumar",
 	"middleName":"ram",
@@ -46,7 +55,3 @@ this.customers=[{
 	}
 }
 ]
-
-  }
-
-}
